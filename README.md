@@ -86,12 +86,14 @@ git clone https://github.com/borglab/gtsam.git
 * Download datset for [2D]( https://www.dropbox.com/s/vcz8cag7bo0zlaj/input_INTEL_g2o.g2o?dl=0) and [3D](https://www.dropbox.com/s/zu23p8d522qccor/parking-garage.g2o?dl=0)
 * Solve 2D & 3D optimization problem using GTSAM and the function. 
 
-#### 1.2D:
-| Batch | Incremental |
-| :---: |:---:|
-| <img src="ps4/pic/2D_batch.jpg" width="450" />  | <img src="ps4/pic/2D_incremental.jpg" width="450" /> |
+  - 2D:
+  
+  | Batch | Incremental |
+  | :---: |:---:|
+  | <img src="ps4/pic/2D_batch.jpg" width="450" />  | <img src="ps4/pic/2D_incremental.jpg" width="450" /> |
+  - 3D:
+  
+  | Batch | Incremental |
+  | :---: |:---:|
+  | <img src="ps4/pic/3D_batch.jpg" width="450" />  | <img src="ps4/pic/3D_incremental.jpg" width="450" /> |
 
-#### 2.3D:
-| Batch | Incremental |
-| :---: |:---:|
-| <img src="ps4/pic/3D_batch.jpg" width="450" />  | <img src="ps4/pic/3D_incremental.jpg" width="450" /> |
