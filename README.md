@@ -13,11 +13,15 @@ As shown in the following picture, since the analytical Cartesian frame is the f
 
 This question utilized different covariance matrix with <img src="https://render.githubusercontent.com/render/math?math=\rho_{r\theta} = 0.1,\  0.5,\  0.9"> to plot the sensor frame and cartesian frame. Covariance values were then calculated:
 
+<p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\sigma_{r\theta} = \rho_{r\theta}\times\sigma_x\sigma_y">.
+</p>
 
 Also, we could draw the sample with the following equations:
 
+<p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\sigma_{r\theta} =Z = LX+\mu">
+</p>
 
 X is just another random value and <img src="https://render.githubusercontent.com/render/math?math=\sigma_{r\theta} =\Sigma = LL^T">. By plugging in the L value, we could produce new data point and plot as the new Sensor Frame in the above figure. The data is no longer independent within their two coordinates. When transformed by Jacobian, the sample-based covariance contours are being off with the calculated contours. As long as the correlation value gets bigger, the red and blue contour differs even further. 
 
@@ -47,3 +51,32 @@ The "continuous" counting sensor model is then implemented as in mentioned in th
 | mean | variance |
 | :---: |:---:|
 | <img src="ps3/pic/1_CSM_mean.png" width="450" />  | <img src="ps3/pic/1_CSM_variance.png" width="450" /> |
+
+## [PS4](Mobile-Robotics/ps4/) : Backend Optimization for Pose Graph SLAM using GTSAM Library
+The Graph Slam is the sate-of-the-art and a prevalent method dealing with the SLAM problem. The advantage of the Graph Slam is to simply construct the graph with factors and poses and utilizing optimizer to solve for better trajectories. This work focus on the backend optimization for that we read 2D and 3D g2o Eile of vertices and edges then optimized by Gauss Newton Optimizer(Batch Method) and iSAM(Incremental Method).
+* Solving the pose graph SLAM problem using GTSAM library
+
+  - Clone the following repository
+```
+git clone https://github.com/borglab/gtsam.git
+```
+* Cmake
+* Complete Cmake file
+* Write function to read [G2O] files:
+  - For 2D file, since I would need to access the factors and the poses, it is modified to store in vectors as the return value from *readVertex()* and *readEdge()*.
+    The format of the 2D g2o files is as following:
+    
+  - As for 3D file, I just use the same code from dataset.cpp. *parse3DFactors()* and *parse3DEdges()* are used. From that, the poses and factors are obtained. The vertices are represented by (x,y,z) and (qw,qx,qy,qz) as the quaternion coordinate. The edges are represented by quaternion and the 6x6 information matrix. 
+
+* Download datset for [2D]( https://www.dropbox.com/s/vcz8cag7bo0zlaj/input_INTEL_g2o.g2o?dl=0) and [3D](https://www.dropbox.com/s/zu23p8d522qccor/parking-garage.g2o?dl=0)
+* Solve 2D & 3D optimization problem using GTSAM and the function. 
+
+#### 1.2D:
+| Batch | Incremental |
+| :---: |:---:|
+| <img src="ps4/dataset/2D_batch.jpg" width="450" />  | <img src="ps4/dataset/2D_incremental.jpg" width="450" /> |
+
+#### 2.3D:
+| Batch | Incremental |
+| :---: |:---:|
+| <img src="ps4/dataset/3D_batch.jpg" width="450" />  | <img src="ps4/dataset/3D_incremental.jpg" width="450" /> |
