@@ -50,7 +50,7 @@ The "continuous" counting sensor model is then implemented as in mentioned in th
 
 | mean | variance |
 | :---: |:---:|
-| <img src="ps3/pic/1_CSM_mean.png" width="450" />  | <img src="ps3/pic/1_CSM_variance.png" width="450" /> |
+| <img src="ps3/pic/3_semantic_CSM_mean.png" width="450" />  | <img src="ps3/pic/4_semantic_CSM_variance.png" width="450" /> |
 
 ## [PS4](Mobile-Robotics/ps4/) : Backend Optimization for Pose Graph SLAM using GTSAM Library
 The Graph Slam is the sate-of-the-art and a prevalent method dealing with the SLAM problem. The advantage of the Graph Slam is to simply construct the graph with factors and poses and utilizing optimizer to solve for better trajectories. This work focus on the backend optimization for that we read 2D and 3D g2o Eile of vertices and edges then optimized by Gauss Newton Optimizer(Batch Method) and iSAM(Incremental Method).
