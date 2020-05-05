@@ -67,23 +67,23 @@ The Graph Slam is the sate-of-the-art and a prevalent method dealing with the SL
     The format of the 2D g2o files is as following:
     - Vertex: <img src="https://render.githubusercontent.com/render/math?math=id_1, x,y,\theta ">
     <p align="center">
-      <img src="ps4/pic/2D_vertex.png" width="600" >
+      <img src="ps4/pic/2D_vertex.png" width="750" >
     </p>
     - Edge: <img src="https://render.githubusercontent.com/render/math?math=id_1, id_2, x,y,\theta, q_{11},q_{12}, q_{13}, q_{22}, q_{23}, q_{33} ">
     <p align="center">
-      <img src="ps4/pic/2D_edge.png" width="600" >
+      <img src="ps4/pic/2D_edge.png" width="750" >
     </p>
 
     
   - As for 3D file, I just use the same code from dataset.cpp. *parse3DFactors()* and *parse3DEdges()* are used. From that, the poses and factors are obtained. The vertices are represented by (x,y,z) and (qw,qx,qy,qz) as the quaternion coordinate. The edges are represented by quaternion and the 6x6 information matrix. 
     - Vertex: <img src="https://render.githubusercontent.com/render/math?math=id_1,\ ( x,y,\theta)\ , (qw, qx, qy, qz) ">
     <p align="center">
-      <img src="ps4/pic/2D_vertex.png" width="600" >
+      <img src="ps4/pic/2D_vertex.png" width="750" >
     </p>
     - Edge: <img src="https://render.githubusercontent.com/render/math?math=id_1,\ id_2,\ ( x,y,\theta)\ , (qw, qx, qy, qz) ">+(21 digits of upper triangle of 6x6 matrix)
 
     <p align="center">
-      <img src="ps4/pic/2D_edge.png" width="600" >
+      <img src="ps4/pic/2D_edge.png" width="750" >
     </p>
 
 * Download datset for [2D]( https://www.dropbox.com/s/vcz8cag7bo0zlaj/input_INTEL_g2o.g2o?dl=0) and [3D](https://www.dropbox.com/s/zu23p8d522qccor/parking-garage.g2o?dl=0)
