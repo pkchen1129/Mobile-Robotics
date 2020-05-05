@@ -65,8 +65,23 @@ git clone https://github.com/borglab/gtsam.git
 * Write function to read [G2O] files:
   - For 2D file, since I would need to access the factors and the poses, it is modified to store in vectors as the return value from *readVertex()* and *readEdge()*.
     The format of the 2D g2o files is as following:
+    <p align="center">
+      <img src="ps4/pic/2D_vertex.png" width="600" >
+    </p>
+    
+    <p align="center">
+      <img src="ps4/pic/2D_edge.png" width="600" >
+    </p>
+
     
   - As for 3D file, I just use the same code from dataset.cpp. *parse3DFactors()* and *parse3DEdges()* are used. From that, the poses and factors are obtained. The vertices are represented by (x,y,z) and (qw,qx,qy,qz) as the quaternion coordinate. The edges are represented by quaternion and the 6x6 information matrix. 
+    <p align="center">
+      <img src="ps4/pic/2D_vertex.png" width="600" >
+    </p>
+    
+    <p align="center">
+      <img src="ps4/pic/2D_edge.png" width="600" >
+    </p>
 
 * Download datset for [2D]( https://www.dropbox.com/s/vcz8cag7bo0zlaj/input_INTEL_g2o.g2o?dl=0) and [3D](https://www.dropbox.com/s/zu23p8d522qccor/parking-garage.g2o?dl=0)
 * Solve 2D & 3D optimization problem using GTSAM and the function. 
@@ -74,9 +89,9 @@ git clone https://github.com/borglab/gtsam.git
 #### 1.2D:
 | Batch | Incremental |
 | :---: |:---:|
-| <img src="ps4/dataset/2D_batch.jpg" width="450" />  | <img src="ps4/dataset/2D_incremental.jpg" width="450" /> |
+| <img src="ps4/pic/2D_batch.jpg" width="450" />  | <img src="ps4/pic/2D_incremental.jpg" width="450" /> |
 
 #### 2.3D:
 | Batch | Incremental |
 | :---: |:---:|
-| <img src="ps4/dataset/3D_batch.jpg" width="450" />  | <img src="ps4/dataset/3D_incremental.jpg" width="450" /> |
+| <img src="ps4/pic/3D_batch.jpg" width="450" />  | <img src="ps4/pic/3D_incremental.jpg" width="450" /> |
